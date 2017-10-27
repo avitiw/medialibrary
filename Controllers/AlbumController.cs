@@ -6,20 +6,22 @@ using System.Linq;
 
 namespace Chinook.Controllers
 {
-  [Route ("api/[controller]")] public class AlbumController:Controller
-  {
-    private readonly ChinookContext _context;
-
-    public AlbumController (ChinookContext context)
+    [Route("api/[controller]")]
+    public class AlbumController : Controller
     {
-      _context = context;
+        private readonly ChinookContext _context;
+
+        public AlbumController(ChinookContext context)
+        {
+            _context = context;
+        }
+
+
+        [HttpGet]
+        public IEnumerable<Album> GetAll()
+        {
+            return _context.Albums.ToList();
+        }
+
     }
-
-
-    [HttpGet] public IEnumerable < Album > GetAll ()
-    {
-      return _context.Albums.ToList ();
-    }
-
-  }
 }

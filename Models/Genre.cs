@@ -1,19 +1,20 @@
 
-using System;using System.ComponentModel.DataAnnotations.Schema;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Chinook.Models
 {
-   [Table("Genre")]
-  public class Genre
-  {
-    public string Name
+    [Table("Genre")]
+    public class Genre
     {
-      get;
-      set;
+        public string Name
+        {
+            get;
+            set;
+        }
+        public int GenreId
+        {
+            get;
+            set;
+        }
     }
-    public int GenreId
-    {
-      get;
-      set;
-    }
-  }
 }
